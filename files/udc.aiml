@@ -1,13 +1,1738 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
+  
   <category>
-        <pattern>WHAT IS YOUR NAME</pattern>
-        <template>My name is tutorial!</template>
-          
+      <pattern>SALUT ^</pattern>
+      <template><srai>BUNA ^</srai></template>
   </category>
   
   <category>
-         <pattern>WHAT IS YOUR AIML</pattern>
-        <template>My name is tutorial!</template>
+      <pattern>HEI ^</pattern>
+      <template><srai>BUNA ^</srai></template>
   </category>
+  
+  <category>
+    <pattern>BUNA ^</pattern>    
+    <template>Buna, cum te numesti?
+        <think><set name="topic">intro</set></think>
+    </template>
+  </category>
+  
+  
+  <topic name="intro">
+      <category>
+          <pattern>*</pattern>
+          <template>
+              <star/>, Bine ai venit!Numele meu este Rem. Astazi te voi ghida prin structura securitatii web.<br/>
+                Doresti sa afli mai multe?
+                <think><set name="topic">Raspuns</set></think>
+          </template>
+      </category>
+  </topic>
+  
+  <topic name="Raspuns">
+      <category>
+          <pattern>Da</pattern>
+          <template>Excelent! Alege o ramura:
+          <ul> 
+          <li>Teorie</li>
+          <li>Practica</li>
+          <li>Unelte</li>
+          <think><set name="topic">tipRamura</set></think>
+          </ul>
+         </template>
+      </category>
+      
+      <category>
+          
+           <pattern>Desigur</pattern>
+          <template>Excelent! Alege o ramura:
+          <ul> 
+          <li>Teorie</li>
+          <li>Practica</li>
+          <li>Unelte</li>
+          <think><set name="topic">tipRamura</set></think>
+          </ul>
+         </template>
+      </category>
+      
+      <category>
+          
+          <pattern>Desigur</pattern>
+          <template>Excelent! Alege o ramura:
+          <ul> 
+          <li>Teorie</li>
+          <li>Practica</li>
+          <li>Unelte</li>
+          <think><set name="topic">tipRamura</set></think>
+          </ul>
+         </template>
+      </category>
+      <category>
+          
+          
+          <pattern>Nu</pattern>
+          <template>Am inteles.Va doresc o zi minunata!ð</template>
+      </category>
+  </topic>
+  
+  <topic name="tipRamura">
+      
+      <category>
+          <pattern>teorie</pattern>
+          <template>
+              Despre care nivel de teorie ai dori informatii?
+              <ul>
+                  <li>Incepator</li>
+                  <li>Avansat</li>
+              </ul>
+              <think><set name="topic">teorie</set></think>
+          </template>
+      </category>
+      
+           
+     
+    
+     <category>
+      <pattern>Practica </pattern>
+      <template>Bun venit in stadiul de practica! Aici se vor da niste probe pentru incepatori cat si avansati.Doriti sa continuati?
+      <think><set name="topic">RaspunsPractica</set></think>
+      </template>
+        </category>
+     
+     
+      <category>
+          <pattern>Unelte</pattern>
+          <template>Excelenta alegere.Aceasta ramura este cea care va furniza mai multe informatii in legaturile cu uneltele folosite de catre profesionisti in aceasta ramura a securitatii.Doriti sa aflati mai multe?
+             <think><set name="topic">RaspunsUnelte</set></think>
+          </template>
+      </category>
+      
+      
+      
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa raspunzi doar cu :"teorie","practica" sau "unelte"(una dintre cele trei ramuri de mai sus).</template>
+      </category>
+      
+  </topic>
+  
+      <topic name="teorie">
+      <category>
+          <pattern>^  Incepator  ^</pattern>
+          <template>
+             Despre ce ati dori sa aflati din nivelul incepator?
+              <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>HTTP</li>
+                  <li>CODARE</li>
+              </ul>
+    
+              </template>
+        </category>
+        
+        <category>
+            <pattern>HTML</pattern>
+            <template> Esti sigur/a ca doresti sa mergi pe aceasta ramura? Daca da,tasteaza te rog din nou numele ramurii alese.
+                <think><set name="topic">HTML</set></think>
+                </template>
+        </category>
+        
+        <category>
+            <pattern>CSS</pattern>
+            <template>
+                Esti sigur/a ca doresti sa mergi pe aceasta ramura? Daca da,tasteaza te rog din nou numele ramurii alese.
+                <think><set name="topic">CSS</set></think>
+                </template>
+        </category>
+        
+        <category>
+            <pattern>HTTP</pattern>
+            <template>
+                Esti sigur/a ca doresti sa mergi pe aceasta ramura? Daca da,tasteaza te rog din nou numele ramurii alese.
+                <think><set name="topic">HTTP</set></think>
+                </template>
+        </category>
+        
+        <category><pattern>CODARE</pattern>
+            <template>Esti sigur/a ca doresti sa mergi pe aceasta ramura? Daca da,tasteaza te rog din nou numele ramurii alese.
+            <think><set name="topic">CODARE</set></think>
+            </template>
+        </category>
+        </topic>
+   
+               
+     <topic name="HTML">
+       <category>
+          <pattern>HTML</pattern>
+          <template>
+          Bine ai venit in capitolul HTML pentru incepatori!Ce fel de elemente HTML ati dori ? 
+           <ul>
+               <li>De Baza</li>
+               <li>Avansate</li>
+           </ul>
+           <think><set name="topic">elementeHTML</set></think>
+          </template>
+      </category>
+        </topic>
+      <topic name="elementeHTML">
+          <category>
+              
+              <pattern>De Baza</pattern>
+              <template>Elementele de baza sunt afisate in lista de mai jos:
+                    <ul>
+                    <li>Elemente</li>
+                    <li>Navigator</li>
+                    <li>Simbol</li>
+                    <li>Comentarii</li>
+                    <li>Link</li>
+                    <li>Imagini</li>
+                    </ul>
+                    Pentru a afla mai multe informatii introduceti numele unui element
+                    <think><set name="topic">elementeBazaHTML</set></think>
+              </template>
+            </category>
+            
+            <category>
+                <pattern>Elemente Avansate</pattern>
+              <template>Elementele avansate sunt afisate in lista de mai jos:
+                    <ul>
+                    <li>Lista</li>
+                    <li>XHTML</li>
+                    <li>Bloc</li>
+                    <li>Clasa</li>
+                    <li>ID</li>
+                    <li> Html+Javascript</li>
+                    <li>Cale Fisier</li>
+                    <li>Charset</li>
+                    <li>Codare URL</li>
+                    </ul>
+                    Pentru a afla mai multe informatii introduceti numele unui element
+                    <think><set name="topic">elementeAvansateHTML</set></think>
+              </template>
+            </category>
+            </topic>
+       
+          <topic name="elementeBazaHTML">
+              
+              
+                <category>
+                    <pattern>Elemente</pattern>
+                    <template>Elementele HTML fÄrÄ conÈinut se numesc elemente goale. Elementele goale nu au o etichetÄ finalÄ, cum ar fi elementul "br" (care indicÄ o pauzÄ de linie)
+                    <link><text>Elemente</text><url>https://www.w3schools.com/html/html_elements.asp</url></link></template>
+                </category>
+                
+                <category>
+                    <pattern>Navigator</pattern>
+                    <template>Motoarele de cÄutare utilizeazÄ rubricile pentru a indexa structura Èi conÈinutul paginilor dvs. web.</template>
+                    <link><text>Navigator</text><url>https://www.w3schools.com/html/html_headings.asp</url></link>
+                </category>
+                
+                
+                <category>
+                    <pattern>Simbol</pattern>
+                    <template>Multe simboluri matematice, tehnice Èi valute nu sunt prezente pe o tastaturÄ normalÄ.Pentru a adÄuga astfel de simboluri la o paginÄ HTML, puteÈi utiliza un nume de entitate HTML.
+                    <link><text>Simbol</text> <url>https://www.w3schools.com/html/html_symbols.asp</url></link></template>
+                </category>
+                
+                
+                 <category>
+                      <pattern>Comentarii</pattern>
+                      <template>Etichetele de comentarii sunt utilizate pentru a insera comentarii Ã®n codul sursÄ HTML.
+                      <link>
+                          <text>Comentarii</text>
+                          <url>https://www.w3schools.com/html/html_comments.asp</url>
+                      </link>
+                      </template>
+                 </category>
+               
+                
+                 <category>
+                     <pattern>Link</pattern>
+                <template>Linkurile HTML sunt hyperlink-uri.PuteÈi face clic pe un link Èi sÄ sÄriÈi la un alt document.
+                           CÃ¢nd mutaÈi mouse-ul peste o legÄturÄ, sÄgeata mouse-ului se va transforma Ã®ntr-o mÃ¢nÄ micÄ.
+                           <link><text>Link</text><url>https://www.w3schools.com/html/html_links.asp</url></link>
+                           </template>
+                 </category>
+                
+                
+                 <category>
+                      <pattern>Imagini</pattern>
+                <template>Imaginile pot Ã®mbunÄtÄÈi designul Èi aspectul unei pagini web.
+                <link><text>Imagine</text><url>https://www.w3schools.com/html/html_images.asp</url> </link></template>
+                 </category>
+        
+        </topic>
+        
+        
+         <topic name="elementeAvansateHTML">
+             
+             <category>
+                 <pattern>Lista</pattern>
+                <template>O listÄ neordonatÄ Ã®ncepe cu eticheta "ul". Fiecare element de listÄ Ã®ncepe cu tagul "li".
+                <link> <text>Lista</text><url>https://www.w3schools.com/html/html_lists.asp</url></link></template>
+            </category>
+            
+              <category>
+                 <pattern>XHTML</pattern>
+                <template>XHTML Ã®nseamnÄ HyptText Markup Language.XML este un limbaj de marcare Ã®n care documentele trebuie sÄ fie marcate corect (sÄ fie âbine formateâ).
+                <link><text>XHTML</text><url>https://www.w3schools.com/html/html_xhtml.asp</url></link></template>
+              </category>
+            
+            
+              <category>
+                 <pattern>Bloc</pattern>
+                <template>Un element la nivel de bloc porneÈte Ã®ntotdeauna pe o nouÄ linie Èi ocupÄ toatÄ lÄÈimea disponibilÄ (se Ã®ntinde spre stÃ¢nga Èi spre dreapta, cÃ¢t poate).
+                 <link> <text>Bloc</text><url>https://www.w3schools.com/html/html_blocks.asp</url></link></template>
+            </category>
+            
+            
+              <category>
+                 <pattern>Clasa</pattern>
+                <template>Atributul clasei HTML este folosit pentru a defini stiluri egale pentru elemente cu acelaÈi nume de clasÄ.
+                
+                <link>
+                    <text>Clasa</text>
+                    <url>https://www.w3schools.com/html/html_classes.asp</url>
+                </link>
+                </template>
+            </category>
+            
+            
+              <category>
+                 <pattern>ID</pattern>
+                <template>Atributul ID specificÄ un id unic pentru un element HTML (valoarea trebuie sÄ fie unicÄ Ã®n documentul HTML).
+                <link>
+                    <text>ID</text>
+                    <url>https://www.w3schools.com/html/html_id.asp</url>
+                </link>
+                </template>
+            </category>
+            
+              <category>
+                 <pattern>Html+Javascript</pattern>
+                <template>Elementul "script" fie conÈine instrucÈiuni script, fie indicÄ un fiÈier script extern prin atributul src.
+               <link><text>HTML+Javascript</text><url>https://www.w3schools.com/html/html_scripts.asp</url></link></template>
+            </category>
+            
+            
+              <category>
+                 <pattern>Cale Fisier</pattern>
+                <template>O cale de fiÈier descrie locaÈia unui fiÈier Ã®n structura folderului unui site web.
+                <link><text>Cale Fisier</text><url>https://www.w3schools.com/html/html_filepaths.asp</url></link></template>
+            </category>
+            
+              <category>
+                 <pattern>Charset</pattern>
+                <template>ASCII a fost primul standard de codare a caracterelor (numit Èi set de caractere). ASCII a definit 128 de caractere alfanumerice diferite care pot fi utilizate pe internet: numere (0-9), litere engleze (A-Z) Èi unele caractere speciale.
+                <link><text>Charset</text><url>https://www.w3schools.com/html/html_charset.asp</url></link></template>
+            </category>
+            
+            <category>
+                <pattern>Codare URL</pattern>
+                <template>O adresÄ URL poate fi compusÄ din cuvinte (w3schools.com) sau o adresÄ IP Protocol (192.68.20.50). Un locator de resurse uniform (URL) este utilizat pentru a adresa un document (sau alte date) pe web.
+                <link><text>Codare URL</text><url>https://www.w3schools.com/html/html_urlencode.asp</url></link></template>
+            </category>
+        </topic>
+   
+    
+     
+      
+        
+         <topic name="CSS">
+       <category>
+          <pattern>CSS</pattern>
+          <template>
+          Ce fel de elemente CSS ati dori ? 
+           <ul>
+               <li>De Baza</li>
+               <li>Avansate</li>
+           </ul>
+           <think><set name="topic">elementeCSS</set></think>
+          </template>
+      </category>
+        </topic>
+      <topic name="elementeCSS">
+          <category>
+              
+              <pattern>De Baza</pattern>
+              <template>Elementele de baza sunt afisate in lista de mai jos:
+                    <ul>
+                    <li>Sintaxa</li>
+                    <li>Comentarii</li>
+                    </ul>
+                    Pentru a afla mai multe informatii introduceti numele unui element
+                    <think><set name="topic">elementeBazaCSS</set></think>
+              </template>
+            </category>
+            
+            <category>
+                <pattern>Elemente Avansate</pattern>
+              <template>Elementele avansate sunt afisate in lista de mai jos:
+                    <ul>
+                    <li>Numarator</li>
+                    <li>Butoane</li>
+                    <li>Forme</li>
+                    </ul>
+                    Pentru a afla mai multe informatii introduceti numele unui element
+                    <think><set name="topic">elementeAvansateCSS</set></think>
+              </template>
+            </category>
+            </topic>
+               
+          <topic name="elementeBazaCSS">
+              
+              
+                <category>
+                    <pattern>Sintaxa</pattern>
+                    <template>Selectorul indicÄ elementul HTML pe care doriÈi sÄ-l stil.
+                    Blocul de declaraÈie conÈine una sau mai multe declaraÈii separate prin punct Èi virgulÄ.
+                    Fiecare declaraÈie include un nume de proprietate CSS Èi o valoare, separate de douÄ puncte.
+                    <link><text>Sintaxa</text><url>https://www.w3schools.com/css/css_syntax.asp</url></link></template>
+                </category>
+                
+                <category>
+                    <pattern>Comentarii</pattern>
+                    <template>Comentariile sunt utilizate pentru a explica codul Èi pot fi utile atunci cÃ¢nd editaÈi codul sursÄ la o datÄ ulterioarÄ.
+                              Comentariile sunt ignorate de browsere.</template>
+                    <link><text>Comentarii</text><url>https://www.w3schools.com/css/css_comments.asp</url></link>
+                </category>
+            
+             </topic>
+        
+        
+      <topic name="elementeAvansateCSS">
+             
+             <category>
+                 <pattern>Numarator</pattern>
+                <template>Contoarele CSS sunt ca âvariabileâ. Valorile variabilei pot fi incrementate prin reguli CSS (care vor urmÄri de cÃ¢te ori sunt utilizate).
+                <link> <text>Lista</text><url>https://www.w3schools.com/css/css_counters.asp</url></link></template>
+            </category>
+            
+              <category>
+                 <pattern>Butoane</pattern>
+                <template>Butoanele sunt folosite in general pentru a putea da forma unei functii bagate in acest tip de element
+                <link><text>Butoane</text><url>https://www.w3schools.com/css/css3_buttons.asp</url></link></template>
+              </category>
+            
+            
+            
+              <category>
+                 <pattern>Forme</pattern>
+                <template>Exemplul de mai sus se aplicÄ tuturor elementelor input. DacÄ doriÈi sÄ stilaÈi un tip de intrare specific, puteÈi utiliza selectori de atribute:
+                
+                <link>
+                    <text>Forme</text>
+                    <url>https://www.w3schools.com/css/css_form.asp</url>
+                </link>
+                </template>
+            </category>
+       </topic>
+       
+       
+         <topic name="HTTP">
+       <category>
+          <pattern>HTTP</pattern>
+          <template>
+          Ce fel de elemente HTTP ati dori ? 
+           <ul>
+               <li>De Baza</li>
+               <li>Avansate</li>
+           </ul>
+           <think><set name="topic">elementeHTTP</set></think>
+          </template>
+      </category>
+        </topic>
+        
+        <topic name="elementeHTTP">
+          <category>
+              
+              <pattern>De Baza</pattern>
+              <template>Elementele de baza sunt afisate in lista de mai jos:
+                    <ul>
+                    <li>Defintia HTTP</li>
+                    <li> Structura HTTP request de la client</li>
+                    <li>Structura HTTP request de la server</li>
+                    <li>HTTP Header</li>
+                    <li>Metoda Head</li>
+                    </ul>
+                    Pentru a afla mai multe informatii introduceti numele unui element
+                    <think><set name="topic">elementeBazaCSS</set></think>
+              </template>
+            </category>
+            
+            <category>
+                <pattern>Elemente Avansate</pattern>
+              <template>Elementele avansate sunt afisate in lista de mai jos:
+                    <ul>
+                    <li>Metode HTTP</li>
+                    <li> Proxi</li>
+                    <li>Transfer Pachete</li>
+                    </ul>
+                    Pentru a afla mai multe informatii introduceti numele unui element
+                    <think><set name="topic">elementeAvansateHTTP</set></think>
+              </template>
+            </category>
+            </topic>
+               
+          <topic name="elementeBazaHTTP">
+              
+              
+                <category>
+                    <pattern>Definitia HTTP</pattern>
+                    <template>HTTP este protocolul utilizat pentru a transfera date pe web. Face parte din suita de protocoale Internet Èi defineÈte comenzile Èi serviciile utilizate pentru transmiterea datelor din pagina web.
+                    <link><text>Definitia HTTP</text><url>https://techterms.com/definition/http</url></link></template>
+                </category>
+                
+                <category>
+                    <pattern>Structura HTTP request de la client</pattern>
+                    <template>O linie de solicitare pentru a obÈine o resursÄ necesarÄ, de exemplu, o solicitare GET / content/page1.html solicitÄ de la server o resursÄ numitÄ /content/page1.html.
+                              Anteturi (Exemplu - Accept-Language: EN).
+                              O linie goalÄ.
+                              Un corp de mesaje care este opÈional.<link><text>Structura HTTP request de la client</text><url>https://www.webnots.com/what-is-http/</url></link>
+                              </template>
+                    
+                </category>
+                
+                 <category>
+                    <pattern>Structura HTTP request de la server</pattern>
+                    <template>Cod de stare HTTP (De exemplu, HTTP / 1.1 301 Mutat permanent, Ã®nseamnÄ cÄ resursa solicitatÄ a fost mutatÄ permanent Èi redirecÈionÃ¢nd cÄtre o altÄ resursÄ).
+                                Anteturi (Exemplu - Tip conÈinut: html)
+                                O linie goalÄ.
+                                Un corp de mesaje care este opÈional.
+                                 <link><text>Structura HTTP request de la client</text><url>https://www.webnots.com/what-is-http/</url></link>
+                                </template>
+                   
+                </category>
+                
+                 <category>
+                    <pattern>HTTP Header</pattern>
+                    <template>De obicei, numele antetului Èi valoarea sunt separate printr-un singur punct. Anteturile HTTP sunt o parte integrantÄ a cererilor Èi rÄspunsurilor HTTP. Ãn termeni mai simpli, anteturile HTTP sunt codul care transferÄ datele Ã®ntre un server Web Èi un browser. Anteturile HTTP sunt destinate Ã®n principal comunicÄrii Ã®ntre server Èi client Ã®n ambele direcÈii.
+                     <link><text>HTTP Header</text><url>https://www.techopedia.com/definition/27178/http-header</url></link>
+                    </template>
+                   
+                </category>
+               
+            </topic>
+        
+        
+      <topic name="elementeAvansateHTTP">
+             
+            <category>
+                <pattern>Metode HTTP</pattern>
+            <template>GET este utilizat pentru a solicita date dintr-o resursÄ specificatÄ.
+                      POST este utilizat pentru a trimite date cÄtre un server pentru a crea / actualiza o resursÄ.
+                      PUT este utilizat pentru a trimite date cÄtre un server pentru a crea / actualiza o resursÄ.
+                      HEAD este aproape identic cu GET, dar fÄrÄ corpul de rÄspuns.
+                      Metoda DELETE Èterge resursa specificatÄ.
+                       <link><text>Metode HTTP</text><url>https://www.w3schools.com/tags/ref_httpmethods.asp</url></link>
+            </template>
+                   
+            </category>
+            
+            <category>
+                <pattern>Proxy</pattern>
+            <template>Ãn reÈelele de calculatoare, un server proxy este o aplicaÈie sau un dispozitiv de server care acÈioneazÄ ca un intermediar pentru solicitÄrile clienÈilor care cautÄ resurse de pe servere care furnizeazÄ aceste resurse. [1] Astfel, un server proxy funcÈioneazÄ Ã®n numele clientului atunci cÃ¢nd solicitÄ serviciul, mascÃ¢nd potenÈial adevÄrata origine a cererii cÄtre serverul de resurse.<link><text>Proxy</text><url>https://www.techopedia.com/definition/27178/http-header</url></link></template>
+            </category>
+            
+            <category>
+                <pattern>Transfer Pachete</pattern>
+            <template>ntr-un site Manager de configurare, Managerul de transfer de pachete este o componentÄ a serviciului SMS_Executive care gestioneazÄ transferul de conÈinut de la un computer server de site cÄtre puncte de distribuÈie de la distanÈÄ dintr-un site. (Un punct de distribuÈie de la distanÈÄ este unul care nu este localizat pe computerul serverului site-ului.)<link><text>Transfer Pachete</text><url>https://docs.microsoft.com/en-us/configmgr/core/plan-design/hierarchy/package-transfer-manager</url></link></template>
+            </category>
+            
+        </topic>
+        
+        
+         <topic name="elementeCODARE">
+          <category>
+              
+              <pattern>De Baza</pattern>
+              <template>Elementele de baza sunt afisate in lista de mai jos:
+                    <ul>
+                    <li>ASCII</li>
+                    <li> CP-037</li>
+                    <li>CP930</li>
+                    <li>ISO-8859-1</li>
+                    </ul>
+                    Pentru a afla mai multe informatii introduceti numele unui element
+                    <think><set name="topic">elementeBazaCodare</set></think>
+              </template>
+            </category>
+            
+            <category>
+                <pattern>Elemente Avansate</pattern>
+              <template>Elementele avansate sunt afisate in lista de mai jos:
+                    <ul>
+                    <li>ISCII</li>
+                    <li>UTF-8</li>
+                    <li>UTF-16</li>
+                    <li>UTF-32</li>
+                    </ul>
+                    Pentru a afla mai multe informatii introduceti numele unui element
+                    <think><set name="topic">elementeAvansateCodare</set></think>
+              </template>
+            </category>
+            </topic>
+               
+          <topic name="elementeBazaCodare">
+              
+              
+                <category>
+                    <pattern>ASCII</pattern>
+                    <template>
+                    ASCII  prescurtatÄ de la codul standard american pentru schimbul de informaÈii, este un standard de codare a caracterelor pentru comunicaÈii electronice. Codurile ASCII reprezintÄ textul Ã®n calculatoare, echipamente de telecomunicaÈii Èi alte dispozitive. Majoritatea schemelor moderne de codare a caracterelor se bazeazÄ pe ASCII, deÈi acceptÄ multe caractere suplimentare.
+                    <link><text>ASCII</text><url>https://en.wikipedia.org/wiki/ASCII</url></link></template>
+                </category>
+                
+                <category>
+                    <pattern>CP-037</pattern>
+                    <template>Deoarece CP 037 conÈine toate caracterele latine-1 standard, este posibilÄ traducerea codurilor de caractere din setul CP 037 Ã®n codurile de caractere ISO 8859-1, astfel Ã®ncÃ¢t traducerea Ã®napoi la setul CP 037 este o rundÄ exactÄ de pÄstrare a valorii. -convertire prin trip. De asemenea, jumÄtate din codurile caracterelor de control pot fi traduse Ã®n echivalentele lor exacte ASCII. DacÄ restul caracterelor de control numai EBCDIC sunt traduse (Ã®n mod arbitrar) Ã®n punctele de cod ASCII rÄmase nefolosite (hex 80 - 9F), traducerea rezultatÄ acoperÄ toate cele 256 de puncte de cod.
+                    <link><text>CP-037</text><url>https://en.wikipedia.org/wiki/EBCDIC_037</url></link>
+                    </template>
+                </category>
+                
+                 <category>
+                    <pattern>CP930</pattern>
+                    <template>CCSID 930 utilizeazÄ o schemÄ de codare EBCDIC, care foloseÈte 1 octet pentru a codifica jumÄtatea lÄÈimii Katakana Èi 2 octeÈi pentru a codifica toate celelalte caractere japoneze. PorÈiunea de un singur octet este CCSID 290, care este cunoscutÄ Èi sub denumirea de EBCDIK (Extended Binary Coded Decimal Interchange Kana). PorÈiunea dublÄ de octeÈi este CCSID 300, care este partajatÄ cu CCSID 939. DacÄ se foloseÈte doar jumÄtatea lÄÈimii Katakana amestecatÄ cu caractere latine, care a fost standard pÃ¢nÄ Ã®n anii 80, CCSID 930 poate fi consideratÄ o purÄ codare pe 8 biÈi. CÃ¢nd se folosesc alte tipuri de caractere japoneze sau cu lÄÈime Ã®ntreagÄ, este o codificare multibyte unde se folosesc octeÈii Shift-Out 0x0E Èi Shift-In 0x0F pentru a indica Ã®nceputul Èi sfÃ¢rÈitul unei codÄri cu doi octeÈi.
+                    <link><text>CP930</text><url>https://en.wikipedia.org/wiki/Code_page_930</url></link>
+                    </template>
+                </category>
+                
+                 <category>
+                    <pattern>ISO-8859-1</pattern>
+                    <template>ISO / IEC 8859-1: 1998, Tehnologia informaÈiei - seturi de caractere grafice codate pe un singur octet - Partea 1: Alfabetul latin nr. 1, face parte din seria ISO / IEC 8859 a codificÄrilor de caractere standard bazate pe ASCII, mai Ã®ntÃ¢i ediÈie publicatÄ Ã®n 1987. ISO 8859-1 codeazÄ ceea ce se referÄ la âalfabetul latin nr. 1â, format din 191 de caractere din scriptul latin. AceastÄ schemÄ de codare a caracterelor este utilizatÄ Ã®n Ã®ntreaga AmericÄ, Europa de Vest, Oceania Èi o mare parte din Africa. Este, de asemenea, utilizat Ã®n mod obiÈnuit Ã®n cele mai multe romanizÄri standard ale limbilor est-asiatice. Este baza pentru cele mai populare seturi de caractere pe 8 biÈi Èi primul bloc de caractere din Unicode.
+                    <link><text>ISO-8859-1</text><url>https://en.wikipedia.org/wiki/ISO/IEC_8859-1</url></link>
+                    </template>
+                </category>
+                
+                <category>
+                    <pattern></pattern>
+                    <template></template>
+                </category>
+               
+            </topic>
+        
+        
+      <topic name="elementeAvansateCodare">
+             
+            <category>
+                <pattern>ISCII</pattern>
+            <template>Codul Scriptului Indian pentru Schimbul de InformaÈii (ISCII) este o schemÄ de codificare pentru reprezentarea diferitelor sisteme de scriere din India. Acesta codificÄ principalele scripturi Indic Èi o transliterare romanÄ. Scripturile acceptate sunt: Assamese, bengaleze (Bangla), Devanagari, Gujarati, Gurmukhi, Kannada, Malayalam, Oriya, Tamil Èi Telugu. ISCII nu codificÄ sistemele de scriere din India bazate pe persanÄ, dar codurile sale de schimbare a sistemului de scriere asigurÄ totuÈi caÈmir, sindhi, urdu, persan, paxto Èi arab. Sistemele de scriere bazate pe persÄ au fost ulterior codificate Ã®n codificarea PASCII.
+         
+                    <link><text>ISCII</text><url>https://en.wikipedia.org/wiki/Indian_Script_Code_for_Information_Interchange</url></link>
+                       </template>
+            </category>
+            
+            
+            <category>
+                <pattern>UTF-8</pattern>
+            <template> UTF-8 (formatul de transformare Unicode pe 8 biÈi) este o codificare cu caractere de lÄÈime variabilÄ, capabilÄ sÄ codifice toate punctele de cod valabile de 1.112.064 [nb 1] din Unicode folosind unul pÃ¢nÄ la patru unitÄÈi de cod cu un octet (8 biÈi). Codificarea este definitÄ de Unicode Standard Èi a fost iniÈial proiectatÄ de Ken Thompson Èi Rob Pike.  Numele este derivat de la formatul de transformare Unicode (sau Universal Coded Character Set) - 8 biÈi.<link><text>UTF-8</text><url>https://en.wikipedia.org/wiki/UTF-8</url></link></template>
+            </category>
+            
+            
+            <category>
+                <pattern>UTF-16</pattern>
+            <template>UTF-16 (formatul de transformare Unicode pe 16 biÈi) este o codificare de caractere capabilÄ sÄ codifice toate 1.112.064 de puncte de cod valabile ale Unicode (de fapt acest numÄr de puncte de cod este dictat de designul UTF-16). Codificarea este de lungime variabilÄ, deoarece punctele de cod sunt codificate cu una sau douÄ unitÄÈi de cod de 16 biÈi. UTF-16 a apÄrut dintr-o codificare anterioarÄ cu 16 biÈi cu lÄÈime fixÄ cunoscutÄ sub numele de UCS-2 (pentru setul de caractere universal cu 2 biÈi) odatÄ ce a devenit clar cÄ sunt necesare mai mult de 216 (65536) puncte de cod<link><text>UTF-16</text><url>https://en.wikipedia.org/wiki/UTF-16</url></link></template>
+            </category>
+            
+            
+            <category>
+                <pattern>UTF-32</pattern>
+            <template>UTF-32 (format de transformare Unicode pe 32 de biÈi) este o codificare cu lungime fixÄ folositÄ pentru codificarea punctelor de cod Unicode care foloseÈte exact 32 biÈi (patru octeÈi) pe punct de cod (dar un numÄr de biÈi de frunte trebuie sÄ fie zero, deoarece sunt mult mai puÈini decÃ¢t 232 puncte de cod Unicode). [este necesarÄ citarea] UTF-32 este o codificare cu lungime fixÄ, spre deosebire de toate celelalte formate de transformare Unicode, care sunt codificÄri cu lungime variabilÄ. Fiecare valoare de 32 de biÈi din UTF-32 reprezintÄ un punct de cod Unicode Èi este exact egalÄ cu valoarea numericÄ a punctului de cod.<link><text>UTF-32</text><url>https://en.wikipedia.org/wiki/UTF-32</url></link></template>
+            </category>
+        </topic>
+        
+        
+   <topic name="teorie">
+      <category>
+          <pattern>^  Avansat  ^</pattern>
+          <template>
+             Despre ce ati dori sa aflati din nivelul avansat?
+              <ul>
+                  <li>Javascript</li>
+                  <li>PHP</li>
+                  <li>JSON</li>
+                  <li>SQL</li>
+              </ul>
+              </template>
+        </category>
+        
+        <category>
+            <pattern>Javascript</pattern>
+            <template>
+                Esti sigur/a ca doresti sa mergi pe aceasta ramura? Daca da,tasteaza te rog din nou numele ramurii alese.
+                <think><set name="topic">Javascript</set></think>
+                </template>
+        </category>
+        
+         <category>
+            <pattern>PHP</pattern>
+            <template>
+                Esti sigur/a ca doresti sa mergi pe aceasta ramura? Daca da,tasteaza te rog din nou numele ramurii alese.
+                <think><set name="topic">PHP</set></think>
+                </template>
+        </category>
+        
+        <category>
+            <pattern>JSON</pattern>
+            <template>
+                Esti sigur/a ca doresti sa mergi pe aceasta ramura? Daca da,tasteaza te rog din nou numele ramurii alese.
+                <think><set name="topic">JSON</set></think>
+                </template>
+        </category>
+        
+        <category><pattern>SQL</pattern>
+            <template>Esti sigur/a ca doresti sa mergi pe aceasta ramura? Daca da,tasteaza te rog din nou numele ramurii alese.
+            <think><set name="topic">SQL</set></think>
+            </template>
+        </category>
+    </topic>
+    
+    
+         <topic name="elementeJavascript">
+          <category>
+              
+              <pattern>De Baza</pattern>
+              <template>Elementele de baza sunt afisate in lista de mai jos:
+                    <ul>
+                    <li>Comentarii</li>
+                    <li> Variabile</li>
+                    <li>Operatori</li>
+                    <li>Tipuri de date</li>
+                    <li>Functii</li>
+                    </ul>
+                    Pentru a afla mai multe informatii introduceti numele unui element
+                    <think><set name="topic">elementeBazaJavascript</set></think>
+              </template>
+            </category>
+            
+            <category>
+                <pattern>Elemente Avansate</pattern>
+              <template>Elementele avansate sunt afisate in lista de mai jos:
+                    <ul>
+                    <li>Obiecte</li>
+                    <li>Evenimente</li>
+                    <li>Numere</li>
+                    <li>Metoda Numerelor</li>
+                    <li>Matrice</li>
+                    <li>Sortarea Matricelor</li>
+                    <li>Iteratia Matricelor</li>
+                    </ul>
+                    Pentru a afla mai multe informatii introduceti numele unui element
+                    <think><set name="topic">elementeAvansateJavascript</set></think>
+              </template>
+            </category>
+            </topic>
+               
+          <topic name="elementeBazaJavascript">
+              
+              
+                <category>
+                    <pattern>Comentarii</pattern>
+                    <template>
+                   Comentariile cu o singurÄ linie Ã®ncep cu //.
+                    Orice text cuprins Ã®ntre // Èi sfÃ¢rÈitul liniei va fi ignorat de JavaScript (nu va fi executat).Comentariile cu mai multe linii Ã®ncep cu / * Èi se terminÄ cu * /.Orice text Ã®ntre / * Èi * / va fi ignorat de JavaScript.
+                    <link><text>Comentarii</text><url>https://www.w3schools.com/js/js_comments.asp</url></link></template>
+                </category>
+                
+                <category>
+                    <pattern>Variabile</pattern>
+                    <template>Toate variabilele JavaScript trebuie identificate cu nume unice.
+                          Aceste nume unice se numesc identificatori.
+                         Identificatorii pot fi nume scurte (cum ar fi x Èi y) sau mai multe nume descriptive (vÃ¢rstÄ, sumÄ, volum total).
+                    <link><text>Variabile</text><url>https://www.w3schools.com/js/js_variables.asp</url></link>
+                    </template>
+                </category>
+                
+                 <category>
+                    <pattern>Operatori</pattern>
+                    <template>Operatorul de atribuire (=) atribuie o valoare unei variabile.
+                         Operatorul de adÄugare (+) adaugÄ numere.
+                         Operatorul de multiplicare (*) Ã®nmulÈeÈte numerele.
+                        Operatorul + poate fi, de asemenea, utilizat pentru a adÄuga Èiruri (concatenate).
+                    <link><text>Operatori</text><url>https://www.w3schools.com/js/js_operators.asp</url></link>
+                    </template>
+                </category>
+                
+                 <category>
+                    <pattern>Tipuri de date</pattern>
+                    <template>Ãn programare, tipurile de date sunt un concept important.
+                              Variabilele JavaScript pot conÈine multe tipuri de date: numere, Èiruri, obiecte
+                             Pentru a putea opera pe variabile, este important sÄ Ètii ceva despre tip.
+                    <link><text>Tipuri de date</text><url>https://www.w3schools.com/js/js_datatypes.asp</url></link>
+                    </template>
+                </category>
+                
+                <category>
+                    <pattern>Functii</pattern>
+                    <template>O funcÈie JavaScript este definitÄ cu cuvÃ¢ntul cheie funcÈie, urmatÄ de un nume, urmatÄ de paranteze ().
+                            Numele funcÈiilor pot conÈine litere, cifre, scoruri mici Èi semne Ã®n dolari (aceleaÈi reguli ca variabile).
+                        <link>
+                            <text>Functii</text>
+                            <url>https://www.w3schools.com/js/js_functions.asp</url>
+                        </link>
+                    </template>
+                </category>
+             </topic>
+        
+        
+      <topic name="elementeAvansateJavascript">
+             
+            <category>
+                <pattern>Obiecte</pattern>
+            <template>Ãn viaÈa realÄ, o maÈinÄ este un obiect.
+                     O maÈinÄ are proprietÄÈi precum greutatea Èi culoarea Èi metode precum pornirea Èi oprirea:
+                     Toate maÈinile au aceleaÈi proprietÄÈi, dar valorile proprietÄÈii diferÄ de la maÈinÄ la maÈinÄ.
+                     Toate maÈinile au aceleaÈi metode, dar metodele sunt efectuate Ã®n momente diferite.
+                <link><text>Obiecte</text><url>https://www.w3schools.com/js/js_objects.asp</url></link>
+                       </template>
+            </category>
+            
+            
+            <category>
+                <pattern>Evenimente</pattern>
+            <template>Un eveniment HTML poate fi ceva ce face browserul sau ceva ce face un utilizator.
+                      IatÄ cÃ¢teva exemple de evenimente HTML:
+                      O paginÄ web HTML s-a terminat de Ã®ncÄrcat
+                      Un cÃ¢mp de intrare HTML a fost modificat
+                      S-a fÄcut clic pe butonul HTML<link><text>Evenimente</text><url>https://www.w3schools.com/js/js_events.asp</url></link></template>
+            </category>
+            
+            
+            <category>
+                <pattern>Numere</pattern>
+            <template>JavaScript are un singur tip de numÄr. Numerele pot fi scrise cu sau fÄrÄ zecimale.
+                      Spre deosebire de multe alte limbaje de programare, JavaScript nu defineÈte diferite tipuri de numere, cum ar fi numere Ã®ntregi, scurte, lungi, flotante etc.
+                      Numerele JavaScript sunt Ã®ntotdeauna stocate ca numere de virgule flotant cu dublÄ precizie, dupÄ standardul internaÈional IEEE 754.
+                      Acest format stocheazÄ numerele Ã®n 64 de biÈi, unde numÄrul (fracÈia) este stocat Ã®n biÈi de la 0 la 51, exponentul Ã®n biÈi 52 la 62 Èi semnul Ã®n bitul 63:<link><text>Numere</text><url>https://www.w3schools.com/js/js_numbers.asp</url></link></template>
+            </category>
+            
+            
+            <category>
+                <pattern>Metoda Numerelor</pattern>
+            <template>Valorile primitive (cum ar fi 3.14 sau 2014), nu pot avea proprietÄÈi Èi metode (pentru cÄ nu sunt obiecte).
+                     Dar cu JavaScript, metodele Èi proprietÄÈile sunt de asemenea disponibile valorilor primitive, deoarece JavaScript trateazÄ valorile primitive ca obiecte atunci cÃ¢nd executÄ metode Èi proprietÄÈi.
+                     Metoda toString returneazÄ un numÄr ca Èir.
+                     toExponential returneazÄ un Èir, cu un numÄr rotunjit Èi scris folosind notaÈie exponenÈialÄ.
+                     toFixed returneazÄ un Èir, cu numÄrul scris cu un numÄr specific de zecimale.
+                     valueOf () returneazÄ un numÄr ca numÄr.<link><text>Metoda Numerelor</text><url>https://www.w3schools.com/js/js_number_methods.asp</url></link></template>
+            </category>
+        
+        <category>
+            <pattern>Matrice</pattern>
+            <template>
+                Matricele JavaScript sunt utilizate pentru a stoca mai multe valori Ã®ntr-o singurÄ variabilÄ.
+                <link>
+                    <text>Matrice</text>
+                    <url>https://www.w3schools.com/js/js_arrays.asp</url>
+                </link>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>Sortarea Matricelor</pattern>
+            <template>Metoda reverse () inverseazÄ elementele dintr-un tablou.
+                    Ãn mod implicit, funcÈia sort () sorteazÄ valorile ca Èiruri.
+                    Acest lucru funcÈioneazÄ bine pentru Èiruri (âAppleâ vine Ã®nainte de âBananaâ).
+                    Cu toate acestea, dacÄ numerele sunt sortate ca Èiruri, â25â este mai mare decÃ¢t â100â, deoarece â2â este mai mare decÃ¢t â1â.
+                    Din aceastÄ cauzÄ, metoda sortare () va produce rezultat incorect la sortarea numerelor.
+                <link>
+                    <text>Sortarea Matricelor</text>
+                    <url>https://www.w3schools.com/js/js_array_sort.asp</url>
+                </link>
+            </template>
+        </category>
+        
+       
+         <category>
+            <pattern> Iteratia Matricelor</pattern>
+            <template>Metoda forEach () apeleazÄ o funcÈie (o funcÈie de returnare) o datÄ pentru fiecare element de matrice.
+                    Metoda map () creeazÄ un nou tablou prin efectuarea unei funcÈii pe fiecare element de matrice.
+                    Metoda map () nu executÄ funcÈia pentru elemente de tablÄ fÄrÄ valori.
+                    Metoda map () nu schimbÄ tabloul original.
+                    Metoda filter () creeazÄ un nou tablou cu elemente de matrice care trece un test.
+                    Metoda reduce () ruleazÄ o funcÈie pe fiecare element de matrice pentru a produce (reduce-o la) o singurÄ valoare.
+                <link>
+                    <text>Iteratia Matricelor</text>
+                    <url>https://www.w3schools.com/js/js_array_iteration.asp</url>
+                </link>
+            </template>
+        </category>
+    </topic>
+        
+         <topic name="elementePHP">
+             <category>
+             <pattern>De Baza</pattern>
+             <template>Elementele de baza sunt afisate in lista de mai jos:
+             <ul>
+                   <li>Comentarii</li>
+                   <li>Variabile</li>
+                   <li>Echo/Print</li>
+                   <li>Tipuri de date</li>
+                   <li>Numere</li>
+                   <li>Constante</li>
+            </ul>
+                   <think><set name="topic">elementeBazaPHP</set></think>
+             </template>
+             </category>
+             
+             <category>
+                <pattern>Elemente Avansate</pattern>
+              <template>Elementele avansate sunt afisate in lista de mai jos:
+                    <ul>
+                    <li>Functii</li>
+                    <li>SuperGlobal</li>
+                    <li>Include/require</li>
+                    </ul>
+                    Pentru a afla mai multe informatii introduceti numele unui element
+                    <think><set name="topic">elementeAvansatePHP</set></think>
+              </template>
+            </category>
+         </topic>
+         
+            <topic name="elementeBazaPHP">
+                 
+            <category>
+                 <pattern>Comentarii</pattern>
+             <template>Un comentariu Ã®n cod PHP este o linie care nu este executatÄ ca parte a programului. Singurul sÄu scop este sÄ fie citit de cineva care se uitÄ la cod.
+                 <link>
+                     <text>Comentariu</text>
+                     <url>https://www.w3schools.com/php/php_comments.asp</url>
+                 </link>
+             </template>
+             </category>
+             
+             <category>
+                 <pattern>Variabile</pattern>
+             <template>Variabilele sunt âcontainereâ pentru stocarea informaÈiilor.
+                 <link>
+                     <text>Variabile</text>
+                     <url>https://www.w3schools.com/php/php_variables.asp</url>
+                 </link>
+             </template>
+             </category>
+             
+             <category>
+                 <pattern>Echo/Print</pattern>
+             <template>ecoul Èi tipÄrirea sunt mai mult sau mai puÈin la fel. Ambele sunt folosite pentru a emite date pe ecran.
+                        DiferenÈele sunt mici: ecoul nu are o valoare de retur, Ã®n timp ce tipÄrirea are o valoare de retur de 1, astfel Ã®ncÃ¢t sÄ poatÄ fi folositÄ Ã®n expresii. ecoul poate lua mai mulÈi parametri (deÈi o astfel de utilizare este rarÄ) Ã®n timp ce tipÄrirea poate lua un argument. ecoul este marginal mai rapid decÃ¢t tipÄrirea.
+                 <link>
+                     <text>Echo</text>
+                     <url>https://www.w3schools.com/php/php_echo_print.asp</url>
+                 </link>
+             </template>
+             </category>
+                
+                
+            
+            <category>
+                 <pattern>Tipuri de date</pattern>
+             <template>Variabilele pot stoca date de diferite tipuri Èi diferite tipuri de date pot face lucruri diferite.
+                 <link>
+                     <text>Tipuri de date</text>
+                     <url>https://www.w3schools.com/php/php_datatypes.asp</url>
+                 </link>
+             </template>
+             </category>
+             
+             <category>
+                 <pattern>Numere</pattern>
+             <template>Deci, dacÄ atribuiÈi o valoare Ã®ntreagÄ unei variabile, tipul acelei variabile va fi automat un numÄr Ã®ntreg. Apoi, dacÄ atribuiÈi un Èir aceleiaÈi variabile, tipul se va schimba la un Èir.
+                 <link>
+                     <text>Numere</text>
+                     <url>https://www.w3schools.com/php/php_numbers.asp</url>
+                 </link>
+             </template>
+             </category>
+             
+             
+             <category>
+                 <pattern>Constante</pattern>
+             <template>O constantÄ este un identificator (nume) pentru o valoare simplÄ. Valoarea nu poate fi modificatÄ Ã®n timpul scriptului.
+                      Un nume constant valabil Ã®ncepe cu o literÄ sau subliniere (fÄrÄ semn $ Ã®nainte de numele constant).
+                 <link>
+                     <text>Constante</text>
+                     <url>https://www.w3schools.com/php/php_constants.asp</url>
+                 </link>
+             </template>
+             </category>
+                </topic>
+                
+            <topic name="elementeAvansatePHP">
+                 <category>
+                 <pattern>Functii</pattern>
+             <template>
+                 <link>
+                     <text></text>
+                     <url></url>
+                 </link>
+             </template>
+             </category>
+             
+             <category>
+                 <pattern>SuperGlobal</pattern>
+             <template>Unele variabile predefinite din PHP sunt âsuperglobaleâ, ceea ce Ã®nseamnÄ cÄ sunt Ã®ntotdeauna accesibile, indiferent de sfera de acÈiune - Èi le puteÈi accesa din orice funcÈie, clasÄ sau fiÈier fÄrÄ a fi nevoie sÄ faceÈi nimic special.
+                 <link>
+                     <text>SuperGlobal</text>
+                     <url>https://www.w3schools.com/php/php_superglobals.asp</url>
+                 </link>
+             </template>
+             </category>
+             
+             <category>
+                 <pattern>Operatori</pattern>
+             <template>InstrucÈiunea include (sau necesitÄ) preia tot textul / codul / marcajul care existÄ Ã®n fiÈierul specificat Èi Ã®l copiazÄ Ã®n fiÈierul care foloseÈte instrucÈiunea include.
+                 <link>
+                     <text>Include/require</text>
+                     <url>https://www.w3schools.com/php/php_includes.asp</url>
+                 </link>
+             </template>
+             </category>
+             </topic>
+             
+              <topic name="elementeJSON">
+             <category>
+             <pattern>De Baza</pattern>
+             <template>Elementele de baza sunt afisate in lista de mai jos:
+             <ul>
+                   <li>JSON VS XML</li>
+                   <li>Tipuri de date</li>
+                   <li>Obiecte</li>
+                   
+            </ul>
+                   <think><set name="topic">elementeBazaJSON</set></think>
+             </template>
+             </category>
+             
+             <category>
+                <pattern>Elemente Avansate</pattern>
+              <template>Elementele avansate sunt afisate in lista de mai jos:
+                    <ul>
+                    <li>JSON PHP</li>
+                    <li>JSONP</li>
+                    <li>JSON HTML</li>
+                    <li>JSON DOM</li>
+                    </ul>
+                    Pentru a afla mai multe informatii introduceti numele unui element
+                    <think><set name="topic">elementeAvansatePHP</set></think>
+              </template>
+            </category>
+         </topic>
+         
+            <topic name="elementeBazaJSON">
+                 <category>
+                 <pattern>JSON VS XML</pattern>
+             <template>JSON este ca XML Deoarece
+                 AtÃ¢t JSON, cÃ¢t Èi XML se âauto-descriuâ (citit de om)
+                 AtÃ¢t JSON, cÃ¢t Èi XML sunt ierarhice (valori Ã®n valori)
+                 AtÃ¢t JSON cÃ¢t Èi XML pot fi analizate Èi utilizate de o mulÈime de limbaje de programare
+                 AtÃ¢t JSON cÃ¢t Èi XML pot fi obÈinute cu un XMLHttpRequest
+
+                 JSON este spre deosebire de XML Deoarece
+                 JSON nu foloseÈte eticheta finalÄ
+                 JSON este mai scurt
+                 JSON este mai rapid sÄ citeascÄ Èi sÄ scrie
+                 JSON poate folosi tablouri
+
+                De ce JSON este mai bun decÃ¢t XML
+                XML este mult mai dificil de analizat decÃ¢t JSON.
+                JSON este analizat Ã®ntr-un obiect JavaScript gata de utilizare.
+                JSON este ca XML Deoarece
+                AtÃ¢t JSON, cÃ¢t Èi XML se âauto-descriuâ (citit de om)
+                AtÃ¢t JSON, cÃ¢t Èi XML sunt ierarhice (valori Ã®n valori)
+                AtÃ¢t JSON cÃ¢t Èi XML pot fi analizate Èi utilizate de o mulÈime de limbaje de programare
+                AtÃ¢t JSON, cÃ¢t Èi XML pot fi obÈinute cu un XMLHttpRequest
+
+                 JSON este spre deosebire de XML Deoarece
+                 JSON nu foloseÈte eticheta finalÄ
+                 JSON este mai scurt
+                 JSON este mai rapid sÄ citeascÄ Èi sÄ scrie
+                 JSON poate folosi tablouri
+
+                De ce JSON este mai bun decÃ¢t XML
+                XML este mult mai dificil de analizat decÃ¢t JSON.
+                JSON este analizat Ã®ntr-un obiect JavaScript gata de utilizare.
+             </template>
+             </category>
+             
+             <category>
+                 <pattern>Tipuri de date</pattern>
+             <template>Ãn JSON, valorile trebuie sÄ fie unul dintre urmÄtoarele tipuri de date:
+                <ul>
+                    un Èir
+                    un numÄr
+                    un obiect (obiect JSON)
+                    un tablou
+                    un boolean
+                    nul
+                </ul>
+             </template>
+             </category>
+             
+             <category>
+                 <pattern>Obiecte</pattern>
+             <template>Obiectele JSON sunt Ã®nconjurate de bretele cretate {}.
+            Obiectele JSON sunt scrise Ã®n perechi cheie / valoare.
+            Tastele trebuie sÄ fie Èiruri, iar valorile trebuie sÄ fie un tip de date JSON valid (Èir, numÄr, obiect, tablou, boolean sau nul).
+            Tastele Èi valorile sunt separate printr-un punct.
+            Fiecare pereche cheie / valoare este separatÄ de virgulÄ.
+             </template>
+             </category>
+             
+             
+                </topic>
+                
+                
+            <topic name="elementeAvansateJSON">
+                 <category>
+                 <pattern>JSON PHP</pattern>
+             <template>O utilizare obiÈnuitÄ a JSON este citirea datelor de pe un server web Èi afiÈarea datelor Ã®ntr-o paginÄ web.
+                        PHP are unele funcÈii integrate pentru a gestiona JSON.
+                 <link>
+                     <text>JSON PHP</text>
+                     <url>https://www.w3schools.com/js/js_json_php.asp</url>
+                 </link>
+             </template>
+             </category>
+             
+              <category>
+                 <pattern>JSONP</pattern>
+             <template> JSONP este o metodÄ de trimitere a datelor JSON fÄrÄ a vÄ preocupa problemele dintre mai multe domenii.
+                        JSONP nu utilizeazÄ obiectul XMLHttpRequest.
+                        JSONP foloseÈte Ã®n schimb eticheta "script".
+                 <link>
+                     <text>JSONP</text>
+                     <url>https://www.w3schools.com/js/js_json_jsonp.asp</url>
+                 </link>
+             </template>
+             </category>
+             
+              <category>
+                 <pattern>JSON HTML</pattern>
+             <template>JSON poate fi foarte uÈor tradus Ã®n JavaScript.
+                      JavaScript poate fi folosit pentru a crea HTML Ã®n paginile tale web.
+                 <link>
+                     <text>JSON HTML</text>
+                     <url>https://www.w3schools.com/js/js_json_html.asp</url>
+                 </link>
+             </template>
+             </category>
+             
+              <category>
+                 <pattern>JSON DOM</pattern>
+             <template>jQuery a fost creat Ã®n 2006 de John Resig. A fost conceput pentru a gestiona incompatibilitÄÈile browserului Èi pentru a simplifica manipularea HTML DOM, manipularea evenimentelor, animaÈii Èi Ajax.
+                        De mai bine de 10 ani, jQuery a fost cea mai popularÄ bibliotecÄ JavaScript din lume.
+                 <link>
+                     <text>JSON DOM</text>
+                     <url>https://www.w3schools.com/js/js_jquery_dom.asp</url>
+                 </link>
+             </template>
+             </category>
+                </topic>
+            
+            <topic name="elementeSQL">
+              <category>
+             <pattern>De Baza</pattern>
+             <template>Elementele de baza sunt afisate in lista de mai jos:
+             <ul>
+                   <li>Select</li>
+                   <li>Where</li>
+                   <li>And or not</li>
+                   <li>Insert into</li>
+                   
+            </ul>
+                   <think><set name="topic">elementeBazaSQL</set></think>
+             </template>
+             </category>
+             
+             <category>
+                <pattern>Elemente Avansate</pattern>
+              <template>Elementele avansate sunt afisate in lista de mai jos:
+                    <ul>
+                    <li>Update</li>
+                    <li>Delete</li>
+                    <li>Min and max</li>
+                    <li>Count avg and sum</li>
+                    <li>Like</li>
+                    </ul>
+                    Pentru a afla mai multe informatii introduceti numele unui element
+                    <think><set name="topic">elementeAvansateSQL</set></think>
+              </template>
+            </category>
+         </topic>
+         
+            <topic name="elementeBazaSQL">
+                
+                 <category>
+                 <pattern>Select</pattern>
+             <template>InstrucÈiunea SELECT este utilizatÄ pentru a selecta date dintr-o bazÄ de date.
+                       Datele returnate sunt stocate Ã®ntr-un tabel de rezultate, numit set de rezultate.
+                 <link>
+                     <text>Select</text>
+                     <url>https://www.w3schools.com/sql/sql_select.asp</url>
+                 </link>
+             </template>
+             </category>
+             
+               <category>
+                 <pattern>Where</pattern>
+             <template>Clauza WHERE este folositÄ pentru a filtra Ã®nregistrÄrile.
+                       Clauza WHERE este utilizatÄ pentru a extrage doar acele Ã®nregistrÄri care Ã®ndeplinesc o condiÈie specificatÄ.
+                 <link>
+                     <text>Where</text>
+                     <url>https://www.w3schools.com/sql/sql_where.asp</url>
+                 </link>
+             </template>
+             </category>
+             
+               <category>
+                 <pattern>And or not</pattern>
+             <template>Clauza WHERE poate fi combinatÄ cu operatorii AND, SAU Èi NU.
+
+                        Operatorii AND Èi OR sunt folosiÈi pentru a filtra Ã®nregistrÄrile pe baza mai multor condiÈii:
+
+                        Operatorul AND afiÈeazÄ o Ã®nregistrare dacÄ toate condiÈiile separate de AND sunt ADEVÄRATE.
+                        Operatorul SA afiÈeazÄ o Ã®nregistrare dacÄ oricare dintre condiÈiile separate de OR este ADEVÄRAT.
+                        Operatorul NOT afiÈeazÄ o Ã®nregistrare dacÄ condiÈiile (condiÈiile) nu sunt ADEVÄRATE.
+                 <link>
+                     <text>And or not</text>
+                     <url>https://www.w3schools.com/sql/sql_and_or.asp</url>
+                 </link>
+             </template>
+             </category>
+             
+               <category>
+                 <pattern>Insert into</pattern>
+             <template>InstrucÈiunea INSERT INTO este utilizatÄ pentru a insera Ã®nregistrÄri noi Ã®ntr-un tabel.
+                 <link>
+                     <text>Insert into</text>
+                     <url>https://www.w3schools.com/sql/sql_insert.asp</url>
+                 </link>
+             </template>
+             </category>
+                </topic>
+                
+                
+            <topic name="elementeAvansateSQL">
+                 <category>
+                 <pattern>Update</pattern>
+             <template>InstrucÈiunea UPDATE este utilizatÄ pentru a modifica Ã®nregistrÄrile existente Ã®ntr-un tabel.
+                 <link>
+                     <text>Update</text>
+                     <url>https://www.w3schools.com/sql/sql_update.asp</url>
+                 </link>
+             </template>
+             </category>
+             
+             <category>
+                 <pattern>Delete</pattern>
+             <template>InstrucÈiunea DELETE este utilizatÄ pentru a Èterge Ã®nregistrÄrile existente dintr-un tabel.
+                      ! AveÈi grijÄ cÃ¢nd ÈtergeÈi Ã®nregistrÄrile dintr-un tabel! ObservaÈi clauza WHERE din declaraÈia DELETE. Clauza WHERE specificÄ ce Ã®nregistrÄri trebuie eliminate. DacÄ omiteÈi clauza WHERE, toate Ã®nregistrÄrile din tabel vor fi Èterse!
+                 <link>
+                     <text>Delete</text>
+                     <url>https://www.w3schools.com/sql/sql_delete.asp</url>
+                 </link>
+             </template>
+             </category>
+             
+             <category>
+                 <pattern>Min and max</pattern>
+             <template>FuncÈia MIN () returneazÄ cea mai micÄ valoare a coloanei selectate.
+                       FuncÈia MAX () returneazÄ cea mai mare valoare a coloanei selectate.
+                 <link>
+                     <text>Min and max</text>
+                     <url>https://www.w3schools.com/sql/sql_min_max.asp</url>
+                 </link>
+             </template>
+             </category>
+             
+             <category>
+                 <pattern>Count avg and sum</pattern>
+             <template>FuncÈia COUNT () returneazÄ numÄrul de rÃ¢nduri care corespund unui criteriu specificat.
+                        FuncÈia AVG () returneazÄ valoarea medie a unei coloane numerice.
+                        FuncÈia SUM () returneazÄ suma totalÄ a unei coloane numerice.
+                 <link>
+                     <text>Count avg and sum</text>
+                     <url>https://www.w3schools.com/sql/sql_count_avg_sum.asp</url>
+                 </link>
+             </template>
+             </category>
+             
+             <category>
+                 <pattern>Like</pattern>
+             <template>Operatorul LIKE este utilizat Ã®ntr-o clauzÄ WHERE pentru a cÄuta un model specificat Ã®ntr-o coloanÄ.
+                      ExistÄ douÄ cÄrÈi de siguranÈÄ folosite adesea Ã®mpreunÄ cu operatorul LIKE:
+                        % - Semnul procentual reprezintÄ zero, unu sau mai multe caractere
+                       _ - Sublinierea reprezintÄ un singur personaj
+                 <link>
+                     <text>Like</text>
+                     <url>https://www.w3schools.com/sql/sql_like.asp</url>
+                 </link>
+             </template>
+             </category>
+                </topic>
+                
+                
+     
+        
+         <topic name="RaspunsPractica">
+         
+         <category>
+             
+            <pattern>Da</pattern>
+            <template>
+            Excelent!Atunci vom intra in stadiul de practica!ð In fiecare nivel,va fi afisata o lista de cunostinte necesare pentru a duce la bun sfarsit proba.<br/>
+            Ce nivel de practica doriti?
+            <ul>
+                <li>Incepator</li>
+                <li>Avansat</li>
+            </ul>
+            <think><set name="topic">ExercitiiPractica</set></think>
+            </template>
+             </category>
+        
+        <category>
+            <pattern>Nu</pattern>
+            <template>Va rog introduceti numele unei alte ramuri ^^
+            <think><set name="tipRamura"></set></think></template>
+            
+        </category>
+        </topic>
+         
+        
+       
+       <topic name="ExercitiiPractica">
+           
+           <category>
+           <pattern>Incepator</pattern>
+           <template>Buna alegere,pentru incepatori cat si avansati. Probele valabile sunt din:
+           <ul>
+               <li>HTML</li>
+               <li>PHP</li>
+               <li>HTTP</li>
+             </ul>
+             Introduceti numele ramurii din care doriti sa faca parte proba.
+             <think><set name="topic">ExercitiiIncepator</set></think>
+           </template>
+           </category>
+           
+           <category>
+               <pattern>Avansat</pattern>
+               <template>Curajoasa alegere!ð Sa trecem la treaba.Probele valabile sunt din:
+               
+               <ul>
+                   <li>PHP</li>
+                   <li>JSON</li>
+                   <li>SQL</li>
+               </ul>
+                Introduceti numele ramurii din care doriti sa faca parte proba.
+                <think><set name="topic">ExercitiiAvansat</set></think>
+               </template>
+               
+           </category>
+            </topic>
+          
+           
+           <topic name="ExercitiiIncepator">
+               
+           <category>
+               <pattern>HTML</pattern>
+               <template>Excelenta alegere!<br/>Cerintele sunt:
+               <ul> 
+               <li>Teoria de baza + avansate HTML</li>
+               <li>Teorie de baza Javascript</li>
+               </ul>
+                Proba este:
+               <link>
+                   <text>HTML - Cod sursa</text>
+                   <url>https://www.root-me.org/en/Challenges/Web-Server/HTML-source-code</url>
+               </link>
+                Succes! ð
+              </template>
+           </category>
+           
+           <category>
+           <pattern>PHP</pattern>
+           <template>Excelenta alegere!<br/>Cerintele sunt:
+           
+           <ul>
+               <li>Cunostinte de baza PHP</li>
+               <li>Cunostinte de baza + avansate HTML +CSS</li>
+               <li>Cunostinte de baza Javascript</li>
+               <li>Cunostinte de baza HTTP</li>
+               <li>Cunostinte de baza CODARE</li>
+           </ul>
+           Probele sunt:
+           <ol>
+               <li>
+               <link>
+                   <text>PHP-Comanda de injectie</text>
+                   <url>https://www.root-me.org/en/Challenges/Web-Server/PHP-Command-injection</url>
+               </link>
+               </li>
+               <li>
+                   <link>
+                       <text>PHP-Parola slaba</text>
+                       <url>https://www.root-me.org/en/Challenges/Web-Server/Weak-password</url>
+                   </link>
+               </li>
+               <li>
+                   <link>
+                       <text>Fisiere Back-up</text>
+                       <url>https://www.root-me.org/en/Challenges/Web-Server/Backup-file</url>
+                   </link>
+               </li>
+           </ol>
+           Succes! ð
+           </template>
+           </category>
+           
+           <category>
+           <pattern>HTTP</pattern>
+           <template>Excelenta alegere!<br/>
+           Cerintele sunt:
+           <ul>
+               <li>Cunostinte de baza + avansate  PHP</li>
+               <li>Cunostinte de baza + avansate HTML +CSS</li>
+               <li>Cunostinte de baza Javascript</li>
+               <li>Cunostinte de baza + avansate HTTP</li>
+               <li>Cunostinte de baza CODARE</li>
+           </ul>
+              Probele sunt:
+           <ol>
+               <li>
+                   <link>
+                       <text>HTTP-Deschidere Redirectionare</text>
+                       <url>https://www.root-me.org/en/Challenges/Web-Server/HTTP-Open-redirect</url>
+                   </link>
+               </li>
+               <li>
+                   <link>
+                       <text>HTTP-Agent utilizator</text>
+                       <url>https://www.root-me.org/en/Challenges/Web-Server/HTTP-User-agent</url>
+                   </link>
+               </li>
+               <li>
+                   <link>
+                       <text>HTTP-Parola slaba</text>
+                       <url>https://www.root-me.org/en/Challenges/Web-Server/Weak-password</url>
+                   </link>
+               </li>
+               <li>
+                   <link>
+                       <text>HTTP-Fisier Back-up</text>
+                       <url>https://www.root-me.org/en/Challenges/Web-Server/Backup-file</url>
+                   </link>
+               </li>
+               <li>
+                   <link>
+                       <text>HTTP-Indexarea directorului</text>
+                       <url>https://www.root-me.org/en/Challenges/Web-Server/HTTP-Directory-indexing</url>
+                   </link>
+               </li>
+               <li>
+                   <link>
+                       <text>HTTP-Header</text>
+                       <url>https://www.root-me.org/en/Challenges/Web-Server/HTTP-Headers</url>
+                   </link>
+               </li>
+               <li>
+                   <link>
+                       <text>HTTP-POST</text>
+                       <url>https://www.root-me.org/en/Challenges/Web-Server/HTTP-POST</url>
+                   </link>
+               </li>
+               <li>
+                   <link>
+                       <text>HTTP-REDIRECTIONARE IMPROPRIE</text>
+                       <url>https://www.root-me.org/en/Challenges/Web-Server/HTTP-Improper-redirect</url>
+                   </link>
+               </li>
+               <li>
+                   <link>
+                       <text>INSTALAREA FISIERELOR</text>
+                       <url>https://www.root-me.org/en/Challenges/Web-Server/Install-files</url>
+                   </link>
+               </li>
+           </ol>
+            Succes! ð
+           </template>
+          </category>
+           
+           </topic>
+      
+        <topic name="ExercitiiAvansat">
+            
+            <category>
+                <pattern>PHP</pattern>
+                <template>Excelent!<br/>Cerintele sunt urmatoarele:
+                <ul>
+                     <li>Cunostinte de baza  + avansate  PHP</li>
+                     <li>Cunostinte de baza + avansate HTML +CSS</li>
+                     <li>Cunostinte de baza + avansate Javascript</li>
+                     <li>Cunostinte de baza + avansate HTTP</li>
+                     <li>Cunostinte de baza + avansate CODARE</li>
+                     <li>Cunostinte de baza JSON</li>
+                     <li>Cunostinte de baza SQL</li>
+                </ul>
+                Prboele sunt:
+                    <ol>
+                        <li>
+                            <link>
+                                <text>PHP Asortare</text>
+                                <url>https://www.root-me.org/en/Challenges/Web-Server/PHP-assert</url>
+                            </link>
+                        </li>
+                        <li>
+                            <link>
+                                <text>PHP Filtre</text>
+                                <url>https://www.root-me.org/en/Challenges/Web-Server/PHP-filters</url>
+                            </link>
+                        </li>
+                        <li>
+                            <link>
+                                <text> PHP Registre Globale</text>
+                                <url>https://www.root-me.org/en/Challenges/Web-Server/PHP-register-globals</url>
+                            </link>
+                        </li>
+                        <li>
+                            <link>
+                                <text> PHP Preg_Replace</text>
+                                <url>https://www.root-me.org/en/Challenges/Web-Server/PHP-preg_replace</url>
+                            </link>
+                        </li>
+                        <li>
+                            <link>
+                                <text>PHP Tipuri de jonglari</text>
+                                <url>https://www.root-me.org/en/Challenges/Web-Server/PHP-type-juggling</url>
+                            </link>
+                        </li>
+                    </ol>
+                Succes! ð
+                </template>
+            </category>
+            
+            <category>
+                <pattern>JSON</pattern>
+               <template>Excelent!<br/>Cerintele sunt urmatoarele:
+                <ul>
+                     <li>Cunostinte de baza  + avansate  PHP</li>
+                     <li>Cunostinte de baza + avansate HTML +CSS</li>
+                     <li>Cunostinte de baza + avansate Javascript</li>
+                     <li>Cunostinte de baza + avansate HTTP</li>
+                     <li>Cunostinte de baza + avansate CODARE</li>
+                     <li>Cunostinte de baza +  avansate JSON</li>
+                     <li>Cunostinte de baza SQL</li>
+                </ul>
+                Probele sunt:
+                <ol>
+                    <li>
+                        <link>
+                            <text>Injectare de sablon</text>
+                            <url>https://www.root-me.org/en/Challenges/Web-Server/Java-Server-side-Template-Injection</url>
+                        </link>
+                    </li>
+                    <li>
+                        <link>
+                            <text>JSON-SPRING BOOT</text>
+                            <url>https://www.root-me.org/en/Challenges/Web-Server/Java-Spring-Boot</url>
+                        </link>
+                    </li>
+                    <li>
+                        <link>
+                            <text>Token Web Cheie Publica</text>
+                            <url>https://www.root-me.org/en/Challenges/Web-Server/JSON-Web-Token-JWT-Public-key</url>
+                        </link>
+                    </li>
+                </ol>
+                 Succes! ð
+                </template>
+            </category>
+            
+            <category>
+                <pattern>SQL</pattern>
+                 <template>Excelent!<br/>Cerintele sunt urmatoarele:
+                <ul>
+                     <li>Cunostinte de baza + avansate  PHP</li>
+                     <li>Cunostinte de baza + avansate HTML +CSS</li>
+                     <li>Cunostinte de baza + avansate Javascript</li>
+                     <li>Cunostinte de baza + avansate HTTP</li>
+                     <li>Cunostinte de baza + avansate CODARE</li>
+                     <li>Cunostinte de baza + avansate JSON</li>
+                     <li>Cunostinte de baza + avansate SQL</li>
+                </ul>
+                <ol>
+                    <li>
+                        <link>
+                            <text>Injectie SQL-Autentificare</text>
+                            <url>https://www.root-me.org/en/Challenges/Web-Server/SQL-injection-authentication</url>
+                        </link></li>
+                    <li>
+                        <link>
+                            <text>Injectie SQL-Autentificare GBK</text>
+                            <url>https://www.root-me.org/en/Challenges/Web-Server/SQL-injection-authentication-GBK</url>
+                        </link></li>
+                    <li>
+                        <link>
+                            <text>Injectie SQL-Siruri</text>
+                            <url>https://www.root-me.org/en/Challenges/Web-Server/SQL-injection-String</url>
+                        </link></li>
+                    <li>
+                        <link>
+                            <text>Injectie NoSQL-Autentificare</text>
+                            <url>https://www.root-me.org/en/Challenges/Web-Server/NoSQL-injection-Authentication</url>
+                        </link></li>
+                    <li>
+                        <link>
+                            <text>Injcetie SQL-Numerice</text>
+                            <url>https://www.root-me.org/en/Challenges/Web-Server/SQL-injection-Numeric</url>
+                        </link></li>
+                    <li>
+                        <link>
+                            <text>Injectie SQL-Eroare</text>
+                            <url>https://www.root-me.org/en/Challenges/Web-Server/SQL-injection-Error</url>
+                        </link></li>
+                    <li>
+                        <link>
+                            <text>SQL-Trunchiere</text>
+                            <url>https://www.root-me.org/en/Challenges/Web-Server/SQL-Truncation</url>
+                        </link></li>
+                     </ol>
+                 Succes! ð
+                </template>
+            </category>
+        </topic>
+        
+      <topic name="RaspunsUnelte">
+          <category>
+          <pattern>Da</pattern>
+          <template> Excelent!Atunci vom intra in stadiul uneltelor!ð Fiecare unealta are cate un rol. Importanta acestui rol este definit de ceea ce utilizator doreste sa faca.<br/>Introduceti numele unei unelte:
+          <ol>
+              <li>Netsparker</li>
+              <li>Acunetix</li>
+              <li>ImmuniWeb</li>
+              <li>Owasp</li>
+              <li>WireShark</li>
+              <li>w3af</li>
+              <li>Metaspoilt</li>
+              <li>SqlMap</li>
+              <li>Nmap</li>
+          </ol>
+        <think><set name="topic">InformatiiUnelte</set></think>
+          </template>
+          </category>
+          
+            <category>
+            <pattern>Nu</pattern>
+            <template>Va rog introduceti numele unei alte ramuri ^^
+            <think><set name="tipRamura"></set></think></template>
+            
+        </category>
+        
+      </topic>
+      
+      <topic name="InformatiiUnelte">
+          
+          <category>
+              <pattern>Netsparker </pattern>
+              <template>Netsparker este o aplicaÈie web complet integratÄ, scalabilÄ, cu mai mulÈi utilizatori cu flux de lucru Ã®ncorporat Èi instrumente de raportare.<br/>Netsparker vÄ ajutÄ sÄ combateÈi decalajul de abilitÄÈi de securitate ciberneticÄ Èi sÄ automatizaÈi complet procesele de securitate web. PuteÈi efectua o evaluare automatÄ a vulnerabilitÄÈii, ceea ce vÄ ajutÄ sÄ acordaÈi prioritate lucrÄrilor dvs. la remedierea problemelor. De asemenea, puteÈi descoperi Èi proteja automat activele web curente, astfel Ã®ncÃ¢t sÄ puteÈi evita procedurile manuale care consumÄ resurse.<br/>Pentru mai multe informatii accesati site-ul de mai josð
+                  <link>
+                      <text>Netsparker</text>
+                      <url>https://www.netsparker.com/</url>
+                  </link>
+              </template>
+          </category>
+          
+          <category>
+              <pattern>Acunetix</pattern>
+              <template>Acunetix este un scaner de securitate web end-to-end care oferÄ o vizualizare 360 a securitÄÈii unei organizaÈii. VÄ permite sÄ preluaÈi controlul asupra securitÄÈii tuturor aplicaÈiilor web, serviciilor web Èi API-urilor pentru a vÄ asigura o protecÈie pe termen lung. Motorul de scanare Acunetix este cunoscut la nivel mondial Èi de Ã®ncredere pentru viteza Èi precizia sa imbatabile.<br/>Pentru mai multe informatii accesati site-ul de mai josð
+                  <link>
+                      <text>Acunetix</text>
+                      <url>https://www.acunetix.com/</url>
+                  </link>
+              </template>
+          </category>
+          
+            <category>
+              <pattern>ImmuniWeb</pattern>
+              <template>ImmuniWeb este un instrument de nepreÈuit pentru iPresent, atÃ¢t cu testare automatÄ, cÃ¢t Èi manualÄ de penetrare. Fantastica testare manualÄ a gÄsit chiar Èi cele mai ascunse Èi complicate bug-uri din securitatea noastrÄ Èi ImmuniWeb a oferit cunoÈtinÈe de primÄ clasÄ.<br/>Pentru mai multe informatii accesati site-ul de mai josð
+                  <link>
+                      <text>ImmuniWeb</text>
+                      <url>https://www.immuniweb.com/</url>
+                  </link>
+              </template>
+          </category>
+          
+            <category>
+              <pattern>Owasp</pattern>
+              <template>Ce este OWASP? Proiectul de securitate pentru aplicaÈii deschise Web, sau OWASP, este o organizaÈie internaÈionalÄ non-profit dedicatÄ securitÄÈii aplicaÈiilor web. Unul dintre principiile de bazÄ ale OWASP este ca toate materialele lor sÄ fie disponibile gratuit Èi uÈor accesibile pe site-ul lor, fÄcÃ¢nd posibil pentru oricine Ã®mbunÄtÄÈeÈte securitatea propriei aplicaÈii web.<br/>Pentru mai multe informatii accesati site-ul de mai josð
+                  <link>
+                      <text>Owasp</text>
+                      <url>https://owasp.org/</url>
+                  </link>
+              </template>
+          </category>
+          
+            <category>
+              <pattern>WireShark</pattern>
+              <template><br/>Wireshark este cel mai important Èi utilizat pe scarÄ largÄ analizator de reÈele din lume. VÄ permite sÄ vedeÈi ce se Ã®ntÃ¢mplÄ Ã®n reÈeaua dvs. la nivel microscopic Èi este standardul de facto (Èi adesea de jure) Ã®n multe Ã®ntreprinderi comerciale Èi non-profit, agenÈii guvernamentale Èi instituÈii de Ã®nvÄÈÄmÃ¢nt.Pentru mai multe informatii accesati site-ul de mai josð
+                  <link>
+                      <text>WireShark</text>
+                      <url>https://www.wireshark.org</url>
+                  </link>
+              </template>
+          </category>
+          
+            <category>
+              <pattern>w3af</pattern>
+              <template>w3af (Web Application Attack and Audit Framework) este un scaner de securitate pentru aplicaÈii web open-source. Proiectul oferÄ un scaner de vulnerabilitate Èi instrument de exploatare pentru aplicaÈiile Web. OferÄ informaÈii despre vulnerabilitÄÈile de securitate utilizate pentru testarea penetrÄrii.<br/>Pentru mai multe informatii accesati site-ul de mai josð
+                  <link>
+                      <text>w3af</text>
+                      <url>w3af.org</url>
+                  </link>
+              </template>
+          </category>
+          
+            <category>
+              <pattern>Metasploit</pattern>
+              <template>Cel mai utilizat cadru de testare a penetrÄrii din lume CunoaÈterea este puterea, mai ales atunci cÃ¢nd este Ã®mpÄrtÄÈitÄ. O colaborare Ã®ntre comunitatea open source Èi Rapid7, Metasploit ajutÄ echipele de securitate sÄ facÄ mai mult decÃ¢t sÄ verifice vulnerabilitÄÈile, sÄ gestioneze evaluÄrile de securitate Èi sÄ Ã®mbunÄtÄÈeascÄ conÈtientizarea securitÄÈii; Ã®mputerniceÈte Èi apÄrÄ pe arme sÄ rÄmÃ¢nÄ mereu cu un pas (sau doi) Ã®naintea jocului.<br/>Pentru mai multe informatii accesati site-ul de mai josð
+                  <link>
+                      <text>Metaspoilt</text>
+                      <url>https://www.metasploit.com</url>
+                  </link>
+              </template>
+          </category>
+          
+            <category>
+              <pattern>SqlMap</pattern>
+              <template>Introducere. sqlmap este un instrument de testare a penetrÄrii surselor deschise care automatizeazÄ procesul de detectare Èi exploatare a defectelor de injecÈie SQL Èi preluarea serverelor de baze de date.<br/>Pentru mai multe informatii accesati site-ul de mai josð
+                  <link>
+                      <text>SqlMap</text>
+                      <url>sqlmap.org</url>
+                  </link>
+              </template>
+          </category>
+          
+           <category>
+              <pattern>Nmap</pattern>
+              <template>Ce este Nmap? De ce ai nevoie de acest mapper de reÈea DeÈi existÄ o mulÈime de instrumente de monitorizare disponibile pentru administratorii de reÈea pentru scanarea porturilor Èi maparea reÈelei, Nmap este standardul de facto.<br/>Pentru mai multe informatii accesati site-ul de mai josð
+                  <link>
+                      <text>Nmap</text>
+                      <url>https://nmap.org</url>
+                  </link>
+              </template>
+          </category>
+      </topic>
+      
+       
+        <category>
+    <pattern>muie
+</pattern>
+    <template>muie lu mata tactctuÂ </template>
+</category>
+<category>
+    <pattern>ma cac</pattern>
+    <template>ma pis</template>
+</category>
 </aiml>
